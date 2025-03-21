@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+</head>
+<body>
+    <button type = 'button' onclick = 'adicionarAlunos()'>Adicionar Alunos</button>
+    <button type = 'button' onclick = 'removerAlunos()'> Remover Alunos </button>
+    <br>
+    <output></output>
+    
+    
+    <script>
+        let alunos = ['Aline', 'Arthur', 'Barbára','Bruna l.', 'Bruna T.', 'Bruna V.', 'Cauã', 'Daniel', 'Davi'];
+
+    
+        function imprimirAlunos (){ 
+          
+          document.querySelector('output').innerHTML = '<h1> Lista de alunos </h1>';
+            
+          for( let indice = 0; indice < alunos.length; indice ++ ){
+             document.querySelector('output').innerHTML += alunos [indice] + '<br>';
+        }
+
+       }
+       
+       function adicionarAlunos(){
+         let novo = prompt('Digite o nome do(a) aluno(a): ');
+         alunos.push(novo);
+
+         usuario = confirm ('Deseja adicionar mais um aluno?');
+         
+         while (usuario){;
+           adicionarAlunos();
+         }
+        
+         imprimirAlunos(); // chama a função sempre que os alunos forem adicionados no programa 
+
+       }
+       imprimirAlunos(); // chama a função no inicio do programa 
+       
+       function removerAlunos(){
+           confirm('Deseja remover o último aluno da lista? \n Se sim, aperte "ok"')
+           alunos.pop();
+           console.log()
+           imprimirAlunos(); 
+
+        }
+        
+
+
+
+       
+
+
+    </script>
+</body>
+</html>
